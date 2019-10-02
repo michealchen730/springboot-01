@@ -10,4 +10,6 @@ public interface UserService {
     public List<User> getAllUser();
 
     public void switchAge(int inputid,int targetid);
+
+    public List<User> selectUserByName(String name);
 }

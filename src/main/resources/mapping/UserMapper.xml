@@ -96,4 +96,11 @@
     <include refid="Base_Column_List" />
     from user
   </select>
+
+  <select id="selectUserByName" parameterType="java.lang.String"  resultType="com.sjtu.springboot.model.User">
+    select
+    <include refid="Base_Column_List" />
+    from user
+    where name = #{name,jdbcType=VARCHAR}
+  </select>
 </mapper>

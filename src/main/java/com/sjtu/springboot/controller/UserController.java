@@ -39,10 +39,8 @@ public class UserController {
         return new ModelAndView("showAllUser","list",list);
     }
     @GetMapping("/login")
-    public ModelAndView toLogin(){
-        ModelAndView mv=new ModelAndView();
-        mv.setViewName("login");
-        return mv;
+    public String toLogin(){
+        return "login";
     }
 
     @PostMapping("/dologin")
@@ -52,12 +50,27 @@ public class UserController {
 
     }
 
+    @GetMapping("/register")
+    public String toRegister(){
+        return "register";
+    }
+
+    @PostMapping("/doregister")
+    public void doRegister(User user){
+        System.out.println(user.getName());
+        System.out.println(user.getPassword());
+
+    }
+
     @PostMapping("/checkUser")
     @ResponseBody
     public String checkUser(String userName){
-        System.out.println(userName);
-        return "chenggong";
-
+        List<User> userList = userService.selectUserByName(userName);
+        if(userList.isEmpty()){
+            return "no";
+        }else{
+            return "yes";
+        }
     }
 
     @RequestMapping("/test")

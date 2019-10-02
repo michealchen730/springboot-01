@@ -40,4 +40,10 @@ public class UserServiceImpl implements UserService {
         userMapper.updateByPrimaryKey(user_1);
         userMapper.updateByPrimaryKey(user_2);
     }
+
+    @Override
+    public List<User> selectUserByName(String name) {
+        List<User> list=userMapper.selectUserByName(name);
+        return list;
+    }
 }
