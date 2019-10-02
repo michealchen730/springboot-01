@@ -15,12 +15,14 @@
         <th>Name</th>
         <th>Age</th>
         <th>Gender</th>
+        <th>Password</th>
     </tr>
     <tr th:each="user:${list}">
         <td th:text="${user.getId()}"></td>
         <td th:text="${user.getName()}"></td>
         <td th:text="${user.getAge()}"></td>
         <td th:text="${user.getGender()==0} ? male:female "></td>
+        <td th:text="${user.getPassword()}"></td>
     </tr>
 </table>
 

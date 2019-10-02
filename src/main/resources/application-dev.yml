@@ -26,6 +26,9 @@ spring:
     useGlobalDataSourceStat: true
     connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
 
+  thymeleaf:
+    cache: false
+
 mybatis:
   mapper-locations: classpath:mapping/*.xml
 
